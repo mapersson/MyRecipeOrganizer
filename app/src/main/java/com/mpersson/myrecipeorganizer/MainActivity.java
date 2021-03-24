@@ -2,7 +2,10 @@ package com.mpersson.myrecipeorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,5 +24,19 @@ public class MainActivity extends AppCompatActivity {
 
         CustomAdapter adapter = new CustomAdapter(this, foodNames, pic);
         gridView.setAdapter(adapter);
+
+
+        //onClick function Creacted
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i==0){
+                    Intent intent = new Intent(MainActivity.this, NewActivity.class);
+                    startActivity(intent);
+
+                }
+            }
+        });
     }
 }
