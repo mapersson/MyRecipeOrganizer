@@ -7,13 +7,15 @@
     tools:context=".MainActivity">
 
     <GridView
+        android:id="@+id/gridViewId"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/gridViewId"
-        android:numColumns="2"
-        android:listSelector="#ff22"
+        android:background="#FAF6F6"
+        android:backgroundTint="#FFFFFF"
         android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"/>
+        android:listSelector="?attr/colorButtonNormal"
+        android:numColumns="2"
+        android:verticalSpacing="10dp" />
 
 
 

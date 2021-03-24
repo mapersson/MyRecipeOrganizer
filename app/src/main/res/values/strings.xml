@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">MyRecipeOrganizer</string>
+
+    <string-array name="food">
+        <item>LEMON GARLIC BUTTER CHICKEN</item>
+        <item>SALMON AND ASPARAGUS FOIL PACKS</item>
+        <item>GARLIC BUTTER CHICKEN BITES</item>
+        <item>GARLIC BUTTER STEAK BITES</item>
+        <item>GARLIC BUTTER TURKEY MEATBALLS</item>
+        <item>15-MINUTE GARLIC BUTTER CHICKEN</item>
+        <item>15-MINUTE LEMON GARLIC BUTTER STEAK</item>
+        <item>CREAMY GARLIC TUSCAN SALMON</item>
+        <item>CILANTRO LIME SHRIMP</item>
+        <item>PINEAPPLE BBQ CHICKEN</item>
+        <item>TOMATO SPINACH SHRIMP PASTA</item>
+        <item>GARLIC BUTTER CHICKEN BITES</item>
+        <item>CRISP-TENDER BAKED GARLIC CHICKEN</item>
+        <item>BAKED HONEY GARLIC SALMON</item>
+
+
+
+
+
+
+    </string-array>
 </resources>

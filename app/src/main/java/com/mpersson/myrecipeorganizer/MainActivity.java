@@ -15,7 +15,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        foodNames = getResources().getStringArray(R.array.food);
 
         gridView=(GridView)findViewById(R.id.gridViewId);
+
+        CustomAdapter adapter = new CustomAdapter(this, foodNames, pic);
+        gridView.setAdapter(adapter);
     }
 }
