@@ -31,11 +31,17 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i==0){
+                if(i==0) {
                     Intent intent = new Intent(MainActivity.this, NewActivity.class);
                     startActivity(intent);
-
                 }
+
+                    if(i==1) {
+                        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                        startActivity(intent);
+                    }
+
+
             }
         });
     }
