@@ -8,31 +8,36 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mpersson.myrecipeorganizer.model.Recipe;
+
+import java.util.List;
+
 // Custom Adapter receives the sub items array
 // The Custom Adapter also sets the image for each item in the grid
 // The Adapter is attached to the GridView
 
 public class CustomAdapter extends BaseAdapter {
     Context context;
-    int[]pic;
+    int[] pic;
     String[] foodName;
+    private List<Recipe> mRecipes;
 
 
     private LayoutInflater inflater;
 
-    CustomAdapter(Context context, String[]foodName, int[]pic){
+    CustomAdapter(Context context, String[] foodName, int[] pic) {
         this.context = context;
         this.foodName = foodName;
         this.pic = pic;
-
     }
-
-
-
 
     @Override
     public int getCount() {
-        return foodName.length;
+        if (mRecipes != null) {
+            return mRecipes.size();
+        } else {
+            return 0;
+        }
     }
 
     @Override
@@ -47,16 +52,21 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        if(view==null){
-            inflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        if (view == null) {
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            view = inflater.inflate(R.layout.sample_view, viewGroup, false );
+            view = inflater.inflate(R.layout.sample_view, viewGroup, false);
         }
 
         ImageView imageView = (ImageView) view.findViewById(R.id.ImageViewId);
-        TextView textView = (TextView)view.findViewById(R.id.textViewId);
+        TextView textView = (TextView) view.findViewById(R.id.textViewId);
         imageView.setImageResource(pic[i]);
-        textView.setText(foodName[i]);
+        textView.setText(mRecipes.get(i).getName());
         return view;
+    }
+
+    void setRecipes(List<Recipe> recipes) {
+        this.mRecipes = recipes;
+        notifyDataSetChanged();
     }
 }

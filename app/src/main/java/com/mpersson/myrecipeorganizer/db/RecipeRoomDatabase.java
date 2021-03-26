@@ -4,12 +4,15 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import androidx.annotation.NonNull;
+import androidx.room.Database;
+import androidx.room.Entity;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.mpersson.myrecipeorganizer.model.Recipe;
 
+@Database(entities = {Recipe.class}, version = 1, exportSchema = false)
 public abstract class RecipeRoomDatabase extends RoomDatabase {
     public abstract RecipeDao recipeDao();
 
@@ -30,6 +33,7 @@ public abstract class RecipeRoomDatabase extends RoomDatabase {
         @Override
         public void onOpen(@NonNull SupportSQLiteDatabase db) {
             super.onOpen(db);
+            new PopulateDbAsync(INSTANCE).execute();
         }
     };
 
@@ -45,11 +49,11 @@ public abstract class RecipeRoomDatabase extends RoomDatabase {
 
         PopulateDbAsync(RecipeRoomDatabase db) {
             mDao = db.recipeDao();
-            mDao.deleteAll();
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
+            mDao.deleteAll();
             for (int i = 0; i < recipes.length; i++) {
                 mDao.insert(recipes[i]);
             }

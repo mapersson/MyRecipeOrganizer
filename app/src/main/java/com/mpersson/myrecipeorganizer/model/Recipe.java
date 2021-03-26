@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "recipe_table")
 public class Recipe {
     @PrimaryKey(autoGenerate = true)
+    private int id;
     @ColumnInfo(name = "name")
     private String mName;
     @ColumnInfo(name = "description")
@@ -16,6 +17,14 @@ public class Recipe {
     public Recipe(@NonNull String name, String description) {
         this.mName = name;
         this.mDescription = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
