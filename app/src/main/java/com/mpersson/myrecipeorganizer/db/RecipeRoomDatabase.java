@@ -43,8 +43,9 @@ public abstract class RecipeRoomDatabase extends RoomDatabase {
         Recipe recipeOne   = new Recipe("Pancakes","Buttermilk pancakes with icing sugar");
         Recipe recipeTwo   = new Recipe("Bread","Sourdough bread with other stuff.");
         Recipe recipeThree   = new Recipe("Cake","Sourdough cake with other stuff.");
+        Recipe recipeFour = new Recipe("Fish", "Burger with potato");
 
-        Recipe[] recipes = {recipeOne, recipeTwo, recipeThree};
+        Recipe[] recipes = {recipeOne, recipeTwo, recipeThree, recipeFour};
 
 
         PopulateDbAsync(RecipeRoomDatabase db) {
