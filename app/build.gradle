@@ -45,4 +45,8 @@ dependencies {
     // Lifecycle components
     implementation "android.arch.lifecycle:extensions:$rootProject.archLifecycleVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$rootProject.archLifecycleVersion"
+
+    //Converter
+    implementation "com.google.code.gson:gson:2.8.6"
+
 }
