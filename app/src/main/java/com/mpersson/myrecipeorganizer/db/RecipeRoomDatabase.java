@@ -43,6 +43,7 @@ public abstract class RecipeRoomDatabase extends RoomDatabase {
         private final RecipeDao mDao;
 
 
+
         String[] ingredients = new String[]{"1 pound (450g) green beans, trimmed", "3 tablespoons butter, divided or (ghee for paleo diet)", "4 garlic cloves, minced"};
         String[] directions = new String[]
                 {
@@ -56,8 +57,9 @@ public abstract class RecipeRoomDatabase extends RoomDatabase {
         Recipe recipeOne = new Recipe("Pancakes", "Buttermilk pancakes with icing sugar", ingredients, directions);
         Recipe recipeTwo = new Recipe("Bread", "Sourdough bread with other stuff.", ingredients, directions);
         Recipe recipeThree = new Recipe("Cake", "Sourdough cake with other stuff.", ingredients, directions);
+        Recipe recipeFour = new Recipe("Fish", "Burger with potato",ingredients, directions);
 
-        Recipe[] recipes = {recipeOne, recipeTwo, recipeThree};
+        Recipe[] recipes = {recipeOne, recipeTwo, recipeThree, recipeFour};
 
 
         PopulateDbAsync(RecipeRoomDatabase db) {
