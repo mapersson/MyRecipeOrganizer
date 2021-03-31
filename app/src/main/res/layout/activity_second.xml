@@ -22,7 +22,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="20sp"
-            android:text="@string/Recipe2"/>
+            android:text="@string/Recipe2Ing"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:text="@string/Recipe2Dir"/>
+
 
 
     </LinearLayout>

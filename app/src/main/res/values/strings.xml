@@ -20,7 +20,7 @@
 
     </string-array>
 
-    <string name="Recipe1">
+    <string name="Recipe1Ing">
         Ingredients:
         \n
         \n
@@ -37,6 +37,8 @@ Juice of 1/2 lemon + lemon slices, for garnish\n
 1/4 teaspoon crushed red chili pepper flakes, optional\n
 1/2 cup fresh chopped parsley\n
         \n
+    </string>
+    <string name="Recipe1Dir">
 
         DIRECTIONS\n
         \n
@@ -54,9 +56,11 @@ Juice of 1/2 lemon + lemon slices, for garnish\n
 
 5. Add cooked chicken thighs back to the pan and reheat quickly. Adjust seasoning with pepper and serve the lemon garlic butter chicken thighs immediately, garnished with more crushed chili pepper, fresh parsley, and a slice of lemon if you like. Enjoy!\n
         \n
+
     </string>
 
-    <string name="Recipe2">
+
+    <string name="Recipe2Ing">
 
         INGREDIENTS LIST FOR THE SALMON AND ASPARAGUS FOIL PACKS\n
         \n
@@ -72,6 +76,10 @@ Salt and fresh ground black pepper, to taste\n
 1 lb (450g) medium-thick asparagus, woody ends trimmed\n
 \n
         \n
+
+</string>
+
+    <string name="Recipe2Dir">
 
         DIRECTIONS\n
         \n
@@ -96,4 +104,5 @@ Salt and fresh ground black pepper, to taste\n
 7. Carefully unwrap the baked salmon in foil packets then drizzle with more lemon juice and garnish with fresh parsley or cilantro and a slice of lemon. Enjoy!\n
         \n
     </string>
+
 </resources>
