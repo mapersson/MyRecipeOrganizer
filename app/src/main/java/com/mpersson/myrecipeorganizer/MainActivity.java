@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Welcome to M&I Kitchen!");
+        actionBar.setIcon(R.drawable.ic_welcome);
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -97,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.add:
+                startActivity(new Intent(MainActivity.this, AddRecipe.class));
                 Toast.makeText(this, "Add clicked", Toast.LENGTH_SHORT).show();
                 break;
         }

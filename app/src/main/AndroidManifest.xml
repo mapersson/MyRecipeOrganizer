@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRecipeOrganizer">
-        <activity android:name=".AddRecipe"></activity>
-        <activity android:name=".ThirdActivity" />
+        <activity android:name=".AddRecipe"
+            android:parentActivityName=".MainActivity"/>
+
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +20,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ThirdActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".SecondActivity"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".NewActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
