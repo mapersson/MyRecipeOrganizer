@@ -1,5 +1,7 @@
 package com.mpersson.myrecipeorganizer;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -7,9 +9,11 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.mpersson.myrecipeorganizer.model.Recipe;
 import com.mpersson.myrecipeorganizer.viewmodel.RecipeViewModel;
@@ -25,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Welcome to M&I Kitchen!");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         foodNames = getResources().getStringArray(R.array.food);
@@ -78,5 +85,21 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId())
+        {
+            case R.id.refresh:
+                Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.add:
+                Toast.makeText(this, "Add clicked", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

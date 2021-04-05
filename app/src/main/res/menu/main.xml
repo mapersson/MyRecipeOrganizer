@@ -10,7 +10,7 @@
 
     <item android:title="Add"
         android:id="@+id/add"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_add"/>
 
