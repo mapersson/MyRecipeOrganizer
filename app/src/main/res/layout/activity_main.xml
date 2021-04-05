@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+   
 
 
 
@@ -17,7 +18,17 @@
         android:horizontalSpacing="10dp"
         android:listSelector="?attr/colorButtonNormal"
         android:numColumns="2"
-        android:verticalSpacing="10dp" />
+        android:verticalSpacing="10dp" >
+
+
+
+
+    </GridView>
+
+
+
+
+
 
 
 
@@ -25,3 +36,4 @@
 
 
 </LinearLayout>
+
