@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class AddRecipe extends AppCompatActivity {
 
@@ -19,5 +20,9 @@ public class AddRecipe extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
+    }
+
+    public void btnSelectImage(View view) {
+
     }
 }
