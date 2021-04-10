@@ -29,6 +29,15 @@
       <EditText
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:hint="Ingredients"
+          android:textSize="19sp"
+          android:id="@+id/text_recipe_ingredients"
+          android:layout_marginTop="10dp"
+          />
+
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
           android:hint="Description"
           android:textSize="19sp"
           android:id="@+id/text_recipe_description"
@@ -48,6 +57,7 @@
           android:layout_width="match_parent"
           android:layout_height="60dp"
           android:text="Upload Recipe"
+          android:onClick="btnUploadRecipe"
           android:textSize="22sp"
           android:backgroundTint="@color/cardview_dark_background"
           />

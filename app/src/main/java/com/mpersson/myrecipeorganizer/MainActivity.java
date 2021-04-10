@@ -77,8 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
             }
         });
 
@@ -106,4 +104,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
