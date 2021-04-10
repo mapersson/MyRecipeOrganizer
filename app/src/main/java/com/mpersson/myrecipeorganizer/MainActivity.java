@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private GridView gridView;
     private RecipeViewModel mRecipeViewModel;
 
+
     int [] pic = {R.drawable.recipe1, R.drawable.recipe2, R.drawable.recipe3, R.drawable.recipe4, R.drawable.recipe5, R.drawable.recipe6, R.drawable.recipe7, R.drawable.recipe8, R.drawable.recipe9, R.drawable.recipe10, R.drawable.recipe11, R.drawable.recipe12, R.drawable.recipe13, R.drawable.recipe14};
     String[] foodNames;
 
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+
         switch (item.getItemId())
         {
             case R.id.refresh:
@@ -98,11 +100,31 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.add:
-                startActivity(new Intent(MainActivity.this, AddRecipe.class));
+                Intent intent = new Intent(MainActivity.this, AddRecipe.class);
+                startActivityForResult(intent, 2);
+
                 Toast.makeText(this, "Add clicked", Toast.LENGTH_SHORT).show();
                 break;
+
+               // startActivityForResult(new Intent(AddRecipe.class, MainActivity.this));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data )
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 2)
+        {
+             Recipe newRecipe = data.getParcelableExtra(AddRecipe.NEW_RECIPE);
+
+
+        }
+
+
+
     }
 
 

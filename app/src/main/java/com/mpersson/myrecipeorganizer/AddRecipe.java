@@ -43,22 +43,7 @@ public class AddRecipe extends AppCompatActivity {
     public void btnSelectImage(View view) {
     }
 
-    public void btnUploadRecipe(View view) {
 
-        /*
-       Intent replyIntent = new Intent();
-
-        if (TextUtils.isEmpty(addIngredients.getText())) {
-            setResult(RESULT_CANCELED, replyIntent);
-        } else {
-            String ingredients = addIngredients.getText().toString();
-            replyIntent.putExtra(EXTRA_REPLY, ingredients);
-            setResult(RESULT_OK, replyIntent);
-        }
-        finish();
-        
-         */
-    }
 
     public void btnAddRecipe(View view) {
         String name = mRecipeName.getText().toString();
