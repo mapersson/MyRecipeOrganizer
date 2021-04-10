@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+//import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == 2)
         {
              Recipe newRecipe = data.getParcelableExtra(AddRecipe.NEW_RECIPE);
-
+             mRecipeViewModel.insert(newRecipe);
 
         }
 
