@@ -8,9 +8,16 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.TextView;
 
+import com.mpersson.myrecipeorganizer.model.Recipe;
+
 public class AddRecipe extends AppCompatActivity {
+    public static final String NEW_RECIPE = "com.mpersson.myrecipeorganizer.NEW_RECIPE";
+    TextView mRecipeName;
+    TextView mRecipeDescription;
+    Recipe newRecipe;
 
     private TextView addIngredients, addDescription;
     private Button addRecipe;
@@ -27,9 +34,8 @@ public class AddRecipe extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
-
-        addIngredients = findViewById(R.id.text_recipe_description);
-
+        mRecipeDescription = findViewById(R.id.text_recipe_description);
+        mRecipeName = findViewById(R.id.text_recipe_name);
     }
 
 
@@ -53,4 +59,18 @@ public class AddRecipe extends AppCompatActivity {
         
          */
     }
+
+    public void btnAddRecipe(View view) {
+        String name = mRecipeName.getText().toString();
+        String description = mRecipeDescription.getText().toString();
+        newRecipe = new Recipe(name, description, null, null);
+
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(NEW_RECIPE, newRecipe);
+        setResult(RESULT_OK, replyIntent);
+        finish();
+
+    }
+
+
 }

@@ -60,6 +60,7 @@
           android:onClick="btnUploadRecipe"
           android:textSize="22sp"
           android:backgroundTint="@color/cardview_dark_background"
+          android:onClick="btnAddRecipe"
           />
 
 
