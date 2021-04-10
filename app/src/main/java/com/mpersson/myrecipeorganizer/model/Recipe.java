@@ -1,5 +1,8 @@
 package com.mpersson.myrecipeorganizer.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -8,7 +11,7 @@ import androidx.room.PrimaryKey;
 import java.util.ArrayList;
 
 @Entity(tableName = "recipe_table")
-public class Recipe {
+public class Recipe implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(name = "name")
@@ -50,4 +53,27 @@ public class Recipe {
     public String[] getIngredients() {
         return mIngredients;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.mName);
+        dest.writeString(this.mDescription);
+        dest.writeStringArray(this.mIngredients);
+        dest.writeStringArray(this.mDirections);
+    }
+
+    public static final Parcelable.Creator<Recipe> CREATOR = new Parcelable.Creator<Recipe>() {
+        public Recipe createFromParcel(Parcel in) {
+            return new Recipe(in.readString(), in.readString(), in.createStringArray(), in.createStringArray());
+        }
+        public Recipe[] newArray(int size) {
+            return new Recipe[size];
+        }
+    };
+
 }
