@@ -1,5 +1,6 @@
 package com.mpersson.myrecipeorganizer;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,11 +14,15 @@ import android.widget.TextView;
 
 import com.mpersson.myrecipeorganizer.model.Recipe;
 
+import java.util.ArrayList;
+
 public class AddRecipe extends AppCompatActivity {
     public static final String NEW_RECIPE = "com.mpersson.myrecipeorganizer.NEW_RECIPE";
+    public static final int ADD_INGREDIENTS = 2 ;
     TextView mRecipeName;
     TextView mRecipeDescription;
     Recipe newRecipe;
+    String[] mIngredients;
 
     private TextView addIngredients, addDescription;
     private Button addRecipe;
@@ -38,8 +43,6 @@ public class AddRecipe extends AppCompatActivity {
         mRecipeName = findViewById(R.id.text_recipe_name);
     }
 
-
-
     public void btnSelectImage(View view) {
     }
 
@@ -48,7 +51,8 @@ public class AddRecipe extends AppCompatActivity {
     public void btnAddRecipe(View view) {
         String name = mRecipeName.getText().toString();
         String description = mRecipeDescription.getText().toString();
-        newRecipe = new Recipe(name, description, null, null);
+        String[] directions = {"Instruction1", "Instruction2"};
+        newRecipe = new Recipe(name, description, mIngredients,  directions);
 
         Intent replyIntent = new Intent();
         replyIntent.putExtra(NEW_RECIPE, newRecipe);
@@ -58,4 +62,18 @@ public class AddRecipe extends AppCompatActivity {
     }
 
 
+    public void btnAddIngredient(View view) {
+        Intent intent = new Intent(AddRecipe.this, addIngredients.class);
+        startActivityForResult(intent, ADD_INGREDIENTS );
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == ADD_INGREDIENTS && resultCode == RESULT_OK){
+            mIngredients = data.getStringArrayExtra("Ingredients");
+
+        }
+    }
 }

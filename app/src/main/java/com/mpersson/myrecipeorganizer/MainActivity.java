@@ -71,13 +71,10 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
 
-                if(i==2) {
+                if(true) {
                     Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
                     startActivity(intent);
                 }
-
-
-
 
             }
         });
