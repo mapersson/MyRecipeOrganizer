@@ -19,7 +19,6 @@
             android:src="@drawable/recipe3"
             />
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -27,42 +26,11 @@
             android:text="Ingredients:"
             android:textStyle="bold" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3 boneless, skinless chicken breasts, cut into bite-sized chunks"
-            android:id="@+id/check_1" />
-
-        <CheckBox
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewIngredients"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="2 bunch of asparagus, rinsed and trimmed"
-            android:id="@+id/check_2"/>
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="1/2 cup butter, softened"
-            android:id="@+id/check_3"/>
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="1 teaspoon olive oil"
-            android:id="@+id/check_4"/>
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="2 teaspoons minced garlic"
-            android:id="@+id/check_5"/>
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="1 teaspoon Italian seasoning or Herbes de Provence"
-            android:id="@+id/check_6"/>
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="1 tablespoon hot sauce, optional (we used Sriracha)"
-            android:id="@+id/check_7"/>
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:layout_width="match_parent"
@@ -72,6 +40,11 @@
             android:textStyle="bold"/>
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 
