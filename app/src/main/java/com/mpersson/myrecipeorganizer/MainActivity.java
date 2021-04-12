@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(true) {
                     Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
+                    intent.putExtra("RECIPE", (Recipe) adapter.getItem(i) );
                     startActivity(intent);
                 }
 
