@@ -19,12 +19,14 @@ import java.util.ArrayList;
 public class AddRecipe extends AppCompatActivity {
     public static final String NEW_RECIPE = "com.mpersson.myrecipeorganizer.NEW_RECIPE";
     public static final int ADD_INGREDIENTS = 2 ;
+    public static final int ADD_DIRECTIONS = 2 ;
     TextView mRecipeName;
     TextView mRecipeDescription;
     Recipe newRecipe;
     String[] mIngredients;
+    String[] mDirections;
 
-    private TextView addIngredients, addDescription;
+    private TextView addIngredients, addDescription, addDirections;
     private Button addRecipe;
 
     @Override
@@ -74,6 +76,24 @@ public class AddRecipe extends AppCompatActivity {
         if (requestCode == ADD_INGREDIENTS && resultCode == RESULT_OK){
             mIngredients = data.getStringArrayExtra("Ingredients");
 
+            
+
+            if (requestCode == ADD_DIRECTIONS && resultCode == RESULT_OK) {
+                mDirections = data.getStringArrayExtra("Directions");
+            }
+
         }
     }
+
+    public void btnAddDirection(View view) {
+
+        Intent intent = new Intent(AddRecipe.this, AddDirections.class);
+      startActivityForResult(intent, ADD_DIRECTIONS);
+
+
+    }
+
+
+
+
 }

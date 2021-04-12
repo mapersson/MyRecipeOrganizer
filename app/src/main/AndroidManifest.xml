@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRecipeOrganizer">
-        <activity android:name=".addIngredients"></activity>
+        <activity android:name=".AddDirections"></activity>
+        <activity android:name=".addIngredients" />
         <activity
             android:name=".AddRecipe"
             android:parentActivityName=".MainActivity" />
@@ -29,7 +30,7 @@
         <activity
             android:name=".NewActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

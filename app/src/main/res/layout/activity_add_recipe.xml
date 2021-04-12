@@ -56,11 +56,14 @@
       <Button
           android:layout_width="match_parent"
           android:layout_height="60dp"
-          android:text="Select Image"
+          android:text="Add Directions"
+
           android:textSize="22sp"
           android:backgroundTint="@color/cardview_dark_background"
-          android:onClick="btnSelectImage"
+          android:onClick="btnAddDirection"
           />
+
+
 
       <Button
           android:layout_width="match_parent"
