@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddRecipe">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="30dp">
+
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="200dp"
+          android:scaleType="centerCrop"
+          />
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Recipe Name"
+          android:textSize="19sp"
+          android:id="@+id/text_recipe_name"
+          android:layout_marginTop="20dp"
+          />
+
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Ingredients"
+          android:textSize="19sp"
+          android:id="@+id/text_recipe_ingredients"
+          android:layout_marginTop="10dp"
+          />
+
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Description"
+          android:textSize="19sp"
+          android:id="@+id/text_recipe_description"
+          android:layout_marginTop="10dp"
+          />
+
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="60dp"
+          android:text="Add Ingredients"
+          android:textSize="22sp"
+          android:backgroundTint="@color/cardview_dark_background"
+          android:onClick="btnAddIngredient"
+          />
+
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="60dp"
+          android:text="Select Image"
+          android:textSize="22sp"
+          android:backgroundTint="@color/cardview_dark_background"
+          android:onClick="btnSelectImage"
+          />
+
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="60dp"
+          android:text="Upload Recipe"
+
+          android:textSize="22sp"
+          android:backgroundTint="@color/cardview_dark_background"
+          android:onClick="btnAddRecipe"
+          />
+
+
+
+
+
+
+
+
+
+  </LinearLayout>
+
+</ScrollView>
