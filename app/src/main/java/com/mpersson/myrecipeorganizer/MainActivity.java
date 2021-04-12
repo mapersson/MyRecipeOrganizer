@@ -8,26 +8,43 @@ import androidx.lifecycle.ViewModelProviders;
 //import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mpersson.myrecipeorganizer.model.Recipe;
 import com.mpersson.myrecipeorganizer.viewmodel.RecipeViewModel;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private GridView gridView;
     private RecipeViewModel mRecipeViewModel;
-
+    private NewHeadlineProvider mHeadlineProvider;
+    private String mHeadline = "";
+    private TextView headlineView;
 
     int [] pic = {R.drawable.recipe1, R.drawable.recipe2, R.drawable.recipe3, R.drawable.recipe4, R.drawable.recipe5, R.drawable.recipe6, R.drawable.recipe7, R.drawable.recipe8, R.drawable.recipe9, R.drawable.recipe10, R.drawable.recipe11, R.drawable.recipe12, R.drawable.recipe13, R.drawable.recipe14};
     String[] foodNames;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        headlineView = findViewById(R.id.txtHeadLine);
+        mHeadlineProvider = new NewHeadlineProvider(headlineView);
+        mHeadlineProvider.execute("https://gnews.io/api/v4/top-headlines?topic=breaking-news&country=ca&token=dab97892125a9e40154596b8a7fad98d&lang=en&max=1");
         foodNames = getResources().getStringArray(R.array.food);
 
         gridView=(GridView)findViewById(R.id.gridViewId);
@@ -55,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        //onClick function Creacted
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
