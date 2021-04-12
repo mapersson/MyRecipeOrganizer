@@ -37,6 +37,16 @@ public class ThirdActivity extends AppCompatActivity {
         mIngRecyclerView.setAdapter(mIngAdapter);
         mIngRecyclerView.setAdapter(mIngAdapter);
         mIngRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        mDescRecyclerView = findViewById(R.id.recyclerviewDescription);
+        String description = mRecipe.getDescription();
+        mDescriptionAdapter = new StringListAdapter(this, new LinkedList<String>(Arrays.asList(description)));
+        mDescRecyclerView.setAdapter(mDescriptionAdapter);
+        mDescRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+
     }
 }
 
