@@ -76,7 +76,7 @@ public class AddRecipe extends AppCompatActivity {
         if (requestCode == ADD_INGREDIENTS && resultCode == RESULT_OK){
             mIngredients = data.getStringArrayExtra("Ingredients");
 
-            
+
 
             if (requestCode == ADD_DIRECTIONS && resultCode == RESULT_OK) {
                 mDirections = data.getStringArrayExtra("Directions");
