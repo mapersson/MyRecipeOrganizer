@@ -18,8 +18,8 @@ import java.util.ArrayList;
 
 public class AddRecipe extends AppCompatActivity {
     public static final String NEW_RECIPE = "com.mpersson.myrecipeorganizer.NEW_RECIPE";
-    public static final int ADD_INGREDIENTS = 2 ;
-    public static final int ADD_DIRECTIONS = 2 ;
+    public static final int ADD_INGREDIENTS = 2;
+    public static final int ADD_DIRECTIONS = 3;
     TextView mRecipeName;
     TextView mRecipeDescription;
     Recipe newRecipe;
@@ -49,12 +49,10 @@ public class AddRecipe extends AppCompatActivity {
     }
 
 
-
     public void btnAddRecipe(View view) {
         String name = mRecipeName.getText().toString();
         String description = mRecipeDescription.getText().toString();
-        String[] directions = {"Instruction1", "Instruction2"};
-        newRecipe = new Recipe(name, description, mIngredients,  directions);
+        newRecipe = new Recipe(name, description, mIngredients, mDirections);
 
         Intent replyIntent = new Intent();
         replyIntent.putExtra(NEW_RECIPE, newRecipe);
@@ -66,34 +64,31 @@ public class AddRecipe extends AppCompatActivity {
 
     public void btnAddIngredient(View view) {
         Intent intent = new Intent(AddRecipe.this, addIngredients.class);
-        startActivityForResult(intent, ADD_INGREDIENTS );
+        startActivityForResult(intent, ADD_INGREDIENTS);
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == ADD_INGREDIENTS && resultCode == RESULT_OK){
+        if (requestCode == ADD_INGREDIENTS && resultCode == RESULT_OK) {
             mIngredients = data.getStringArrayExtra("Ingredients");
+            return;
 
-
-
-            if (requestCode == ADD_DIRECTIONS && resultCode == RESULT_OK) {
-                mDirections = data.getStringArrayExtra("Directions");
-            }
-
+        }
+        if (requestCode == ADD_DIRECTIONS && resultCode == RESULT_OK) {
+            mDirections = data.getStringArrayExtra("Directions");
+            return;
         }
     }
 
     public void btnAddDirection(View view) {
 
         Intent intent = new Intent(AddRecipe.this, AddDirections.class);
-      startActivityForResult(intent, ADD_DIRECTIONS);
+        startActivityForResult(intent, ADD_DIRECTIONS);
 
 
     }
-
-
 
 
 }

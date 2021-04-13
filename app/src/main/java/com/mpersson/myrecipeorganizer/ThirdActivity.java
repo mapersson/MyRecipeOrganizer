@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.mpersson.myrecipeorganizer.model.Recipe;
@@ -20,7 +19,7 @@ public class ThirdActivity extends AppCompatActivity {
     private RecyclerView mIngRecyclerView;
     private RecyclerView mDescRecyclerView;
     private StringListAdapter mIngAdapter;
-    private StringListAdapter mDescriptionAdapter;
+    private StringListAdapter mDirectionAdapter;
     private Recipe mRecipe;
 
     @Override
@@ -39,10 +38,10 @@ public class ThirdActivity extends AppCompatActivity {
         mIngRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        mDescRecyclerView = findViewById(R.id.recyclerviewDescription);
-        String description = mRecipe.getDescription();
-        mDescriptionAdapter = new StringListAdapter(this, new LinkedList<String>(Arrays.asList(description)));
-        mDescRecyclerView.setAdapter(mDescriptionAdapter);
+        mDescRecyclerView = findViewById(R.id.recyclerviewDirections);
+        String[] directions = mRecipe.getDirections();
+        mDirectionAdapter = new StringListAdapter(this, new LinkedList<String>(Arrays.asList(directions)));
+        mDescRecyclerView.setAdapter(mDirectionAdapter);
         mDescRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
