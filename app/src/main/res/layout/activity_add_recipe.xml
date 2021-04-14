@@ -53,7 +53,7 @@
 
           android:textSize="22sp"
           android:backgroundTint="@color/cardview_dark_background"
-          android:onClick="btnAddDirection"
+          android:onClick="btnAddDirections"
           />
 
 
