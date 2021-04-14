@@ -18,6 +18,7 @@ import com.mpersson.myrecipeorganizer.model.Recipe;
 import java.util.ArrayList;
 
 public class AddRecipe extends AppCompatActivity {
+
     public static final String NEW_RECIPE = "com.mpersson.myrecipeorganizer.NEW_RECIPE";
     public static final int ADD_INGREDIENTS = 2;
     public static final int ADD_DIRECTIONS = 3;
@@ -51,18 +52,38 @@ public class AddRecipe extends AppCompatActivity {
         String description = mRecipeDescription.getText().toString();
 
 
-        if(mIngredients == null)
+      /*  String[] mIngredients = editText.getText().toString();
+        if (mIngredients.equals(""))
+        {
+            Toast.makeText(this, "Add Ingredients!", Toast.LENGTH_SHORT).show();
+            return;
+        } */
+
+
+
+
+
+        if(mIngredients.equals(""))
         {
 
             Toast.makeText(this, "Add Ingredients!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if(mDirections == null)
+        if(mDirections.equals(""))
         {
             Toast.makeText(this, "Add Directions!", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        if(mRecipeName.equals("")) {
+
+            Toast.makeText(this, "Add Recipe Name!", Toast.LENGTH_SHORT).show();
+            return;
+
+        }
+
+
         newRecipe = new Recipe(name, description, mIngredients, mDirections);
 
         Intent replyIntent = new Intent();

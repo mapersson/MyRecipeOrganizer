@@ -117,8 +117,10 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId())
         {
-            case R.id.refresh:
-                Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+            case R.id.map:
+                Intent intent1 = new Intent(MainActivity.this, MapsActivity.class);
+                startActivityForResult(intent1, 4);
+                Toast.makeText(this, "Map clicked", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.add:
