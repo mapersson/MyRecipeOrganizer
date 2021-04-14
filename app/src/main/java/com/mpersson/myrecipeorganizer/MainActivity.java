@@ -80,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+
+
                 if(i==0) {
                     Intent intent = new Intent(MainActivity.this, NewActivity.class);
                     startActivity(intent);
@@ -92,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(true) {
                     Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
+                    intent.putExtra("RECIPE", (Recipe) adapter.getItem(i) );
                     startActivity(intent);
                 }
 

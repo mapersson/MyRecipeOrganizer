@@ -35,6 +35,9 @@ public class AddDirections extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+
     }
 
     public void btnSaveDirections(View view) {

@@ -18,15 +18,15 @@ import java.util.ArrayList;
 
 public class AddRecipe extends AppCompatActivity {
     public static final String NEW_RECIPE = "com.mpersson.myrecipeorganizer.NEW_RECIPE";
-    public static final int ADD_INGREDIENTS = 2 ;
-    public static final int ADD_DIRECTIONS = 3 ;
+    public static final int ADD_INGREDIENTS = 2;
+    public static final int ADD_DIRECTIONS = 3;
     TextView mRecipeName;
     TextView mRecipeDescription;
     Recipe newRecipe;
     String[] mIngredients;
     String[] mDirections;
 
-    private TextView addIngredients, addDescription;
+    private TextView addIngredients, addDescription, addDirections;
     private Button addRecipe;
 
     @Override
@@ -49,11 +49,10 @@ public class AddRecipe extends AppCompatActivity {
     }
 
 
-
     public void btnAddRecipe(View view) {
         String name = mRecipeName.getText().toString();
         String description = mRecipeDescription.getText().toString();
-        newRecipe = new Recipe(name, description, mIngredients,  mDirections);
+        newRecipe = new Recipe(name, description, mIngredients, mDirections);
 
         Intent replyIntent = new Intent();
         replyIntent.putExtra(NEW_RECIPE, newRecipe);
@@ -72,6 +71,9 @@ public class AddRecipe extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == ADD_INGREDIENTS && resultCode == RESULT_OK) {
+            mIngredients = data.getStringArrayExtra("Ingredients");
+            return;
 
         if (requestCode == ADD_INGREDIENTS && resultCode == RESULT_OK) {
             mIngredients = data.getStringArrayExtra("Inputs");
@@ -80,6 +82,10 @@ public class AddRecipe extends AppCompatActivity {
         }
         if (requestCode == ADD_DIRECTIONS && resultCode == RESULT_OK) {
             mDirections = data.getStringArrayExtra("Inputs");
+            return;
+        }
+        if (requestCode == ADD_DIRECTIONS && resultCode == RESULT_OK) {
+            mDirections = data.getStringArrayExtra("Directions");
             return;
         }
     }
