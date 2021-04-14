@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mpersson.myrecipeorganizer.model.Recipe;
 
@@ -52,6 +53,20 @@ public class AddRecipe extends AppCompatActivity {
     public void btnAddRecipe(View view) {
         String name = mRecipeName.getText().toString();
         String description = mRecipeDescription.getText().toString();
+
+
+        if(mIngredients == null)
+        {
+
+            Toast.makeText(this, "Add Ingredients!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(mDirections == null)
+        {
+            Toast.makeText(this, "Add Directions!", Toast.LENGTH_SHORT).show();
+            return;
+        }
         newRecipe = new Recipe(name, description, mIngredients, mDirections);
 
         Intent replyIntent = new Intent();
@@ -65,6 +80,7 @@ public class AddRecipe extends AppCompatActivity {
     public void btnAddIngredient(View view) {
         Intent intent = new Intent(AddRecipe.this, addIngredients.class);
         startActivityForResult(intent, ADD_INGREDIENTS);
+
 
     }
 

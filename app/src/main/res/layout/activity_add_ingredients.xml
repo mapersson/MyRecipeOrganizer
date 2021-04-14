@@ -20,10 +20,12 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="new Ingredient"
+
+        android:hint="Enter Ingredient Here"
         app:layout_constraintBottom_toTopOf="@+id/btnAddIngredient"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <Button
         android:id="@+id/btnAddIngredient"

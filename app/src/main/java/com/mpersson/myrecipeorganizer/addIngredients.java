@@ -47,4 +47,7 @@ public class addIngredients extends AppCompatActivity {
         mStringList.addLast(mIngredient.getText().toString());
         mRecyclerView.getAdapter().notifyItemInserted(mStringList.size());
     }
+
+
+
 }
