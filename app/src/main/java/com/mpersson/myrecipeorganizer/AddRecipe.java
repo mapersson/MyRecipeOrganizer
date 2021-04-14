@@ -45,10 +45,6 @@ public class AddRecipe extends AppCompatActivity {
         mRecipeName = findViewById(R.id.text_recipe_name);
     }
 
-    public void btnSelectImage(View view) {
-    }
-
-
     public void btnAddRecipe(View view) {
         String name = mRecipeName.getText().toString();
         String description = mRecipeDescription.getText().toString();
@@ -63,32 +59,32 @@ public class AddRecipe extends AppCompatActivity {
 
 
     public void btnAddIngredient(View view) {
-        Intent intent = new Intent(AddRecipe.this, addIngredients.class);
+        Intent intent = new Intent(AddRecipe.this, AddDirections.class);
+        intent.putExtra("txtBoxHint", "Add Ingredients");
         startActivityForResult(intent, ADD_INGREDIENTS);
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == ADD_INGREDIENTS && resultCode == RESULT_OK) {
-            mIngredients = data.getStringArrayExtra("Ingredients");
-            return;
 
+        if (requestCode == ADD_INGREDIENTS && resultCode == RESULT_OK) {
+            mIngredients = data.getStringArrayExtra("Inputs");
+            return;
         }
         if (requestCode == ADD_DIRECTIONS && resultCode == RESULT_OK) {
-            mDirections = data.getStringArrayExtra("Directions");
+            mDirections = data.getStringArrayExtra("Inputs");
             return;
         }
+
     }
 
-    public void btnAddDirection(View view) {
+    public void btnAddDirections(View view) {
 
         Intent intent = new Intent(AddRecipe.this, AddDirections.class);
+        intent.putExtra("txtBoxHint", "Add Directions");
         startActivityForResult(intent, ADD_DIRECTIONS);
 
-
     }
-
 
 }

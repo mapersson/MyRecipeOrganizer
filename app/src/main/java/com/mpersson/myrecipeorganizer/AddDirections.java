@@ -24,7 +24,12 @@ public class AddDirections extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_directions);
+
+        Intent intent = getIntent();
+        String txtHint = intent.getStringExtra("txtBoxHint");
+
         mDirections = findViewById(R.id.txtDirections);
+        mDirections.setHint(txtHint);
         mAddDirections = findViewById(R.id.btnAddDirections);
         mAdapter = new StringListAdapter(this, mStringList);
         mRecyclerView = findViewById(R.id.recyclerView);
@@ -39,7 +44,7 @@ public class AddDirections extends AppCompatActivity {
 
         mStringList.addLast(mDirections.getText().toString());
         mRecyclerView.getAdapter().notifyItemInserted(mStringList.size());
-
+        mDirections.setText("");
 
     }
 
@@ -47,7 +52,7 @@ public class AddDirections extends AppCompatActivity {
 
         String[] mDirectionList = mStringList.toArray(new String[mStringList.size()]);
         Intent replyIntent = new Intent();
-        replyIntent.putExtra("Directions", mDirectionList);
+        replyIntent.putExtra("Inputs", mDirectionList);
         setResult(RESULT_OK, replyIntent);
         finish();
 
