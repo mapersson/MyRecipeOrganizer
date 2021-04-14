@@ -3,49 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".AddDirections">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtIngredient"
+        app:layout_constraintBottom_toTopOf="@id/btnAddDirections"
         app:layout_constraintTop_toTopOf="parent">
 
     </androidx.recyclerview.widget.RecyclerView>
 
+
     <EditText
-        android:id="@+id/txtIngredient"
+        android:id="@+id/txtDirections"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="new Ingredient"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddIngredient"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddDirections"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnAddIngredient"
+        android:id="@+id/btnAddDirections"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add"
-        android:onClick="btnSaveIngredient"
-        app:layout_constraintBottom_toTopOf="@+id/btnSaveIngredient"
+        android:onClick="btnSaveDirections"
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveDirections"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <Button
-        android:id="@+id/btnSaveIngredient"
+        android:id="@+id/btnSaveDirections"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:onClick="btnReturnIngredients"
+        android:onClick="btnReturnDirections"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
