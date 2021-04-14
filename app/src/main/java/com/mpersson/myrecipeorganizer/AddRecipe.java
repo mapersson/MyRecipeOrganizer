@@ -52,35 +52,37 @@ public class AddRecipe extends AppCompatActivity {
         String description = mRecipeDescription.getText().toString();
 
 
-      /*  String[] mIngredients = editText.getText().toString();
-        if (mIngredients.equals(""))
-        {
-            Toast.makeText(this, "Add Ingredients!", Toast.LENGTH_SHORT).show();
-            return;
-        } */
 
 
 
 
 
-        if(mIngredients.equals(""))
+
+        if(mIngredients == null)
         {
 
             Toast.makeText(this, "Add Ingredients!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if(mDirections.equals(""))
+        if(mDirections == null)
         {
             Toast.makeText(this, "Add Directions!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if(mRecipeName.equals("")) {
+
+
+        if(mRecipeName.getText().length() == 0) {
 
             Toast.makeText(this, "Add Recipe Name!", Toast.LENGTH_SHORT).show();
             return;
 
+        }
+
+        if(mRecipeDescription.getText().length() == 0) {
+            Toast.makeText(this, "Add Descriptions!", Toast.LENGTH_SHORT).show();
+            return;
         }
 
 
