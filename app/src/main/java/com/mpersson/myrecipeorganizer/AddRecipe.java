@@ -11,12 +11,14 @@ import android.view.View;
 import android.widget.Button;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mpersson.myrecipeorganizer.model.Recipe;
 
 import java.util.ArrayList;
 
 public class AddRecipe extends AppCompatActivity {
+
     public static final String NEW_RECIPE = "com.mpersson.myrecipeorganizer.NEW_RECIPE";
     public static final int ADD_INGREDIENTS = 2;
     public static final int ADD_DIRECTIONS = 3;
@@ -26,8 +28,7 @@ public class AddRecipe extends AppCompatActivity {
     String[] mIngredients;
     String[] mDirections;
 
-    private TextView addIngredients, addDescription, addDirections;
-    private Button addRecipe;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,36 @@ public class AddRecipe extends AppCompatActivity {
     public void btnAddRecipe(View view) {
         String name = mRecipeName.getText().toString();
         String description = mRecipeDescription.getText().toString();
+
+
+        if(mIngredients == null)
+        {
+
+            Toast.makeText(this, "Add Ingredients!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(mDirections == null)
+        {
+            Toast.makeText(this, "Add Directions!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+
+        if(mRecipeName.getText().length() == 0) {
+
+            Toast.makeText(this, "Add Recipe Name!", Toast.LENGTH_SHORT).show();
+            return;
+
+        }
+
+        if(mRecipeDescription.getText().length() == 0) {
+            Toast.makeText(this, "Add Descriptions!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
         newRecipe = new Recipe(name, description, mIngredients, mDirections);
 
         Intent replyIntent = new Intent();

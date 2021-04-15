@@ -3,10 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Refresh"
-        android:id="@+id/refresh"
+        android:id="@+id/map"
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_refresh1"/>
+        android:icon="@drawable/ic_map"
+        />
 
     <item android:title="Add"
         android:id="@+id/add"
