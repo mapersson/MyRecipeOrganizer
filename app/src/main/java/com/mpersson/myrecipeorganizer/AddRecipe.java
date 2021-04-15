@@ -28,8 +28,7 @@ public class AddRecipe extends AppCompatActivity {
     String[] mIngredients;
     String[] mDirections;
 
-    private TextView addIngredients, addDescription, addDirections;
-    private Button addRecipe;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +49,6 @@ public class AddRecipe extends AppCompatActivity {
     public void btnAddRecipe(View view) {
         String name = mRecipeName.getText().toString();
         String description = mRecipeDescription.getText().toString();
-
-
-
-
-
-
 
 
         if(mIngredients == null)
