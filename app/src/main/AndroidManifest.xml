@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ThirdActivity"
+            android:name=".RecipeDetail"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SecondActivity"
