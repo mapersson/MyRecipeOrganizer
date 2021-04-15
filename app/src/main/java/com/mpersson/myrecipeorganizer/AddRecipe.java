@@ -34,7 +34,7 @@ public class AddRecipe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Add Your Recipe Here!");
+        actionBar.setTitle(getString(R.string.abAddRecipeTitleBar));
 
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
@@ -91,7 +91,7 @@ public class AddRecipe extends AppCompatActivity {
 
     public void btnAddIngredient(View view) {
         Intent intent = new Intent(AddRecipe.this, AddDirections.class);
-        intent.putExtra("txtBoxHint", "Add Ingredients");
+        intent.putExtra("txtBoxHint", getString(R.string.txtHintAddIng));
         startActivityForResult(intent, ADD_INGREDIENTS);
     }
 

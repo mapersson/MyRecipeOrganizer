@@ -13,7 +13,7 @@ import com.mpersson.myrecipeorganizer.model.Recipe;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class ThirdActivity extends AppCompatActivity {
+public class RecipeDetail extends AppCompatActivity {
     private final LinkedList<String> mStringList = new LinkedList<>();
     private EditText mThirdActivity;
     private RecyclerView mIngRecyclerView;

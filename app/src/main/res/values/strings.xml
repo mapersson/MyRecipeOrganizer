@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MyRecipeOrganizer</string>
 
+
     <string-array name="food">
         <item>LEMON GARLIC BUTTER CHICKEN</item>
         <item>SALMON AND ASPARAGUS FOIL PACKS</item>
@@ -108,6 +109,8 @@ Salt and fresh ground black pepper, to taste\n
     <string name="add">Add</string>
     <string name="save">Save</string>
     <string name="new_ingredient">new Ingredient</string>
+    <string name="abAddRecipeTitleBar">Add Your Recipe Here!</string>
+    <string name="txtHintAddIng">Add Ingredients</string>
     <string name="title_activity_maps">Map</string>
 
 </resources>
