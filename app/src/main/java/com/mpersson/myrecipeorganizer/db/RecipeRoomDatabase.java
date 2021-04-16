@@ -66,8 +66,22 @@ public abstract class RecipeRoomDatabase extends RoomDatabase {
             String descriptionTwo = mContext.getResources().getString(R.string.RecipeTwoDescription);
             Recipe recipeTwo = new Recipe(titleTwo, descriptionTwo, ingredientsTwo, directionsTwo);
 
+            String[] ingredientsThree = mContext.getResources().getStringArray(R.array.RecipeThreeIng);
+            String[] directionsThree = mContext.getResources().getStringArray(R.array.RecipeThreeDir);
+            String titleThree = mContext.getResources().getString(R.string.RecipeThreeTitle);
+            String descriptionThree = mContext.getResources().getString(R.string.RecipeThreeDescription);
+            Recipe recipeThree = new Recipe(titleThree, descriptionThree, ingredientsThree, directionsThree);
+
+            String[] ingredientsFour = mContext.getResources().getStringArray(R.array.RecipeFourIng);
+            String[] directionsFour = mContext.getResources().getStringArray(R.array.RecipeFourDir);
+            String titleFour = mContext.getResources().getString(R.string.RecipeFourTitle);
+            String descriptionFour = mContext.getResources().getString(R.string.RecipeFourDescription);
+            Recipe recipeFour = new Recipe(titleFour, descriptionFour, ingredientsFour, directionsFour);
+
             mDao.insert(recipeOne);
             mDao.insert(recipeTwo);
+            mDao.insert(recipeThree);
+            mDao.insert(recipeFour);
 
             return null;
         }
