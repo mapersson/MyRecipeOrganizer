@@ -19,15 +19,13 @@ import java.util.List;
 public class CustomAdapter extends BaseAdapter {
     Context context;
     int[] pic;
-    String[] foodName;
     private List<Recipe> mRecipes;
 
 
     private LayoutInflater inflater;
 
-    CustomAdapter(Context context, String[] foodName, int[] pic) {
+    CustomAdapter(Context context, int[] pic) {
         this.context = context;
-        this.foodName = foodName;
         this.pic = pic;
     }
 
