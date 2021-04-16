@@ -53,6 +53,45 @@
         <item>7. Carefully unwrap the baked salmon in foil packets then drizzle with more lemon juice and garnish with fresh parsley or cilantro and a slice of lemon. Enjoy!</item>
     </string-array>
 
+    <string name="RecipeThreeTitle">GRAND MARNIER SOUFFLE</string>
+    <string name="RecipeThreeDescription">Great for brunch and dinner</string>
+    <string-array name="RecipeThreeIng">
+    <item>3 tablespoons granulated sugar</item>
+        <item>3 tablespoons all-purpose flour</item>
+        <item>Unsalted butter, softened, for greasing</item>
+        <item>Crème Pâtissière, at room temperature</item>
+        <item>2 tablespoons Grand Marnier</item>
+        <item>1 tablespoons orange zest</item>
+        <item>6 large egg whites, at room temperature</item>
+    </string-array>
+
+    <string-array name="RecipeThreeDir">
+        <item>1. Preheat oven to 375°F with oven rack in lower third of oven. Stir together granulated sugar and flour in a small bowl; set aside.</item>
+        <item>2. Cut a 24- x 12-inch piece of parchment paper; fold lengthwise 3 times (letter- style).</item>
+        <item>3. Wrap paper around outside top of a 1-quart soufflé dish to form a collar extending 2 inches above rim; secure tightly with string or tape. </item>
+        <item>4. Rub inside of soufflé dish and parchment collar with butter. Dust with sugar mixture, shaking out excess. </item>
+    </string-array>
+
+    <string name="RecipeFourTitle">POULET AU VINAIGRE</string>
+    <string name="RecipeFourDescription">Food and Wine named this recipe one of our 40 best</string>
+    <string-array name="RecipeFourIng">
+        <item>4 unpeeled garlic cloves</item>
+        <item>1 (2 1/2- to 3-pound) whole chicken, cut into 10 pieces </item>
+        <item>Kosher salt</item>
+        <item>Freshly ground black pepper</item>
+        <item>1/2 cup mild white wine vinegar or rice vinegar</item>
+        <item>2 tablespoons chopped fresh flat-leaf parsley </item>
+        <item>2 tablespoon unsalted butter</item>
+    </string-array>
+
+    <string-array name="RecipeFourDir">
+        <item>1. Preheat oven to 200°F. Heat clarified butter and garlic in a large, heavy-bottomed skillet over medium-high. (The skillet should be large enough to hold all the chicken pieces in 1 layer.) </item>
+        <item>2. Add vinegar, and bring mixture to a brisk boil over medium-high; top chicken with tomatoes and parsley. </item>
+        <item>3. Using a spoon, skim and discard fat from surface of vinegar mixture in skillet. Continue to cook over low, undisturbed, until reduced by one-third, 3 to 4 minutes. </item>
+        <item>4. Transfer chicken to a platter; pour sauce over chicken, and serve immediately.</item>
+    </string-array>
+
+
 
     <string name="add_a_new_recipe_here">Add a New Recipe Here:</string>
     <string name="add">Add</string>
