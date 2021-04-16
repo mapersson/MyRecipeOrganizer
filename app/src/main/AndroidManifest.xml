@@ -33,12 +33,13 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".AddDirections" />
 
         <activity
             android:name=".AddRecipe"
             android:parentActivityName=".MainActivity" />
+
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,14 +50,7 @@
         <activity
             android:name=".RecipeDetail"
             android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".SecondActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".NewActivity"
-            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
-
 
     </application>
 

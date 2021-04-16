@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView headlineView;
 
     int[] pic = {R.drawable.recipe1, R.drawable.recipe2, R.drawable.recipe3, R.drawable.recipe4, R.drawable.recipe5, R.drawable.recipe6, R.drawable.recipe7, R.drawable.recipe8, R.drawable.recipe9, R.drawable.recipe10, R.drawable.recipe11, R.drawable.recipe12, R.drawable.recipe13, R.drawable.recipe14};
-    String[] foodNames;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +45,9 @@ public class MainActivity extends AppCompatActivity {
         headlineView = findViewById(R.id.txtHeadLine);
         mHeadlineProvider = new NewHeadlineProvider(headlineView);
         mHeadlineProvider.execute("https://gnews.io/api/v4/top-headlines?topic=breaking-news&country=ca&token=dab97892125a9e40154596b8a7fad98d&lang=en&max=1");
-        foodNames = getResources().getStringArray(R.array.food);
 
         gridView = (GridView) findViewById(R.id.gridViewId);
-        CustomAdapter adapter = new CustomAdapter(this, foodNames, pic);
+        CustomAdapter adapter = new CustomAdapter(this, pic);
         gridView.setAdapter(adapter);
 
         mRecipeViewModel = ViewModelProviders.of(this).get(RecipeViewModel.class);
