@@ -6,80 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".AddRecipe">
 
-  <LinearLayout
+  <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       android:padding="30dp">
 
       <ImageView
-          android:layout_width="match_parent"
-          android:layout_height="200dp"
+          android:id="@+id/imageView"
+          android:layout_width="173dp"
+          android:layout_height="159dp"
+          android:contentDescription="@string/recipephoto"
           android:scaleType="centerCrop"
-          />
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
       <EditText
-          android:layout_width="match_parent"
+          android:id="@+id/text_recipe_name"
+          android:layout_width="283dp"
           android:layout_height="wrap_content"
+          android:layout_marginStart="4dp"
           android:hint="Recipe Name"
           android:textSize="19sp"
-          android:id="@+id/text_recipe_name"
-          android:layout_marginTop="20dp"
-          />
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/imageView"
+          app:layout_constraintTop_toBottomOf="@+id/text_recipe_description" />
 
       <EditText
-          android:layout_width="match_parent"
+          android:id="@+id/text_recipe_ingredients"
+          android:layout_width="283dp"
           android:layout_height="wrap_content"
+          android:layout_marginStart="30dp"
+
           android:hint="Ingredients"
           android:textSize="19sp"
-          android:id="@+id/text_recipe_ingredients"
-          android:layout_marginTop="10dp"
-          />
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.426"
+          app:layout_constraintStart_toEndOf="@+id/imageView"
+          app:layout_constraintTop_toBottomOf="@+id/text_recipe_name" />
 
       <EditText
-          android:layout_width="match_parent"
+          android:id="@+id/text_recipe_description"
+          android:layout_width="283dp"
           android:layout_height="wrap_content"
           android:hint="Description"
           android:textSize="19sp"
-          android:id="@+id/text_recipe_description"
-          android:layout_marginTop="10dp"
-          />
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/imageView"
+          app:layout_constraintTop_toTopOf="parent" />
 
       <Button
-          android:layout_width="match_parent"
-          android:layout_height="60dp"
-          android:text="Add Ingredients"
-          android:textSize="22sp"
+          android:id="@+id/button"
+          android:layout_width="178dp"
+          android:layout_height="40dp"
           android:backgroundTint="@color/cardview_dark_background"
           android:onClick="btnAddIngredient"
-          />
+          android:text="@string/add_ingredients"
+          android:textSize="12sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
       <Button
-          android:layout_width="match_parent"
-          android:layout_height="60dp"
-          android:text="Select Image"
-          android:textSize="22sp"
+          android:id="@+id/button2"
+          android:layout_width="178dp"
+          android:layout_height="37dp"
           android:backgroundTint="@color/cardview_dark_background"
-          android:onClick="btnSelectImage"
-          />
+          android:onClick="btnAddDirections"
+          android:text="@string/add_directions"
+          android:textSize="12sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/button" />
 
       <Button
-          android:layout_width="match_parent"
-          android:layout_height="60dp"
-          android:text="Upload Recipe"
+          android:layout_width="178dp"
+          android:layout_height="37dp"
 
-          android:textSize="22sp"
           android:backgroundTint="@color/cardview_dark_background"
           android:onClick="btnAddRecipe"
-          />
+          android:text="@string/upload_recipe"
+          android:textSize="12sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 
-
-
-
-
-
-
-
-  </LinearLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

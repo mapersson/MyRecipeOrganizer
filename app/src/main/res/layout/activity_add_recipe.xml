@@ -15,12 +15,12 @@
       <ImageView
           android:layout_width="match_parent"
           android:layout_height="200dp"
-          android:scaleType="centerCrop"
-          />
+          android:contentDescription="@string/recipeimage"
+          android:scaleType="centerCrop" />
       <EditText
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:hint="Recipe Name"
+          android:hint="@string/recipe_name"
           android:textSize="19sp"
           android:id="@+id/text_recipe_name"
           android:layout_marginTop="20dp"
@@ -31,16 +31,16 @@
       <EditText
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:hint="Description"
+          android:hint="@string/description"
           android:textSize="19sp"
           android:id="@+id/text_recipe_description"
           android:layout_marginTop="10dp"
-          />
+          android:inputType="TODO" />
 
       <Button
           android:layout_width="match_parent"
           android:layout_height="60dp"
-          android:text="Add Ingredients"
+          android:text="@string/add_ingredients"
           android:textSize="22sp"
           android:backgroundTint="@color/cardview_dark_background"
           android:onClick="btnAddIngredient"
@@ -49,7 +49,7 @@
       <Button
           android:layout_width="match_parent"
           android:layout_height="60dp"
-          android:text="Add Directions"
+          android:text="@string/add_directions"
 
           android:textSize="22sp"
           android:backgroundTint="@color/cardview_dark_background"
@@ -61,7 +61,7 @@
       <Button
           android:layout_width="match_parent"
           android:layout_height="60dp"
-          android:text="Upload Recipe"
+          android:text="@string/upload_recipe"
 
           android:textSize="22sp"
           android:backgroundTint="@color/cardview_dark_background"
