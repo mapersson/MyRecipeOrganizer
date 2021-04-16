@@ -32,8 +32,9 @@
 
         <activity
             android:name=".MapsActivity"
+            android:parentActivityName=".MainActivity"
             android:label="@string/title_activity_maps"
-            android:parentActivityName=".MainActivity"></activity>
+           />
         <activity android:name=".AddDirections" />
 
         <activity
