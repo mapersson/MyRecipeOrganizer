@@ -122,5 +122,7 @@
     <string name="save">Save</string>
     <string name="description">Description</string>
     <string name="recipe_name">Recipe Name</string>
+    <string name="add_description">Add Descriptions!</string>
+    <string name="add_recipe_name">Add Recipe Name!</string>
 
 </resources>

@@ -54,13 +54,13 @@ public class AddRecipe extends AppCompatActivity {
         if(mIngredients == null)
         {
 
-            Toast.makeText(this, "Add Ingredients!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.add_ingredients, Toast.LENGTH_SHORT).show();
             return;
         }
 
         if(mDirections == null)
         {
-            Toast.makeText(this, "Add Directions!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.add_directions, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -68,13 +68,13 @@ public class AddRecipe extends AppCompatActivity {
 
         if(mRecipeName.getText().length() == 0) {
 
-            Toast.makeText(this, "Add Recipe Name!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.add_recipe_name, Toast.LENGTH_SHORT).show();
             return;
 
         }
 
         if(mRecipeDescription.getText().length() == 0) {
-            Toast.makeText(this, "Add Descriptions!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.add_description, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -91,7 +91,7 @@ public class AddRecipe extends AppCompatActivity {
 
     public void btnAddIngredient(View view) {
         Intent intent = new Intent(AddRecipe.this, AddDirections.class);
-        intent.putExtra("txtBoxHint", getString(R.string.txtHintAddIng));
+        intent.putExtra("txtBoxHint", R.string.add_ingredients);
         startActivityForResult(intent, ADD_INGREDIENTS);
     }
 
@@ -113,7 +113,7 @@ public class AddRecipe extends AppCompatActivity {
     public void btnAddDirections(View view) {
 
         Intent intent = new Intent(AddRecipe.this, AddDirections.class);
-        intent.putExtra("txtBoxHint", "Add Directions");
+        intent.putExtra("txtBoxHint", R.string.add_directions);
         startActivityForResult(intent, ADD_DIRECTIONS);
 
     }
