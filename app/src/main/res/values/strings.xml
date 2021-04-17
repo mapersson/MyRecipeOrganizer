@@ -94,8 +94,8 @@
 
 
     <string name="add_a_new_recipe_here">Add a New Recipe Here:</string>
-    <string name="add">Add</string>
-    <string name="save">Save</string>
+    <string name="add1">Add</string>
+    <string name="save1">Save</string>
     <string name="new_ingredient">new Ingredient</string>
     <string name="abAddRecipeTitleBar">Add Your Recipe Here!</string>
     <string name="txtHintAddIng">Add Ingredients</string>
@@ -106,19 +106,21 @@
     <string name="ingredients">Ingredients:</string>
     <string name="directions">Directions:</string>
     <string name="chickenasparagus">ChickenAsparagus</string>
-    <string name="upload_recipe">Upload Recipe</string>
-    <string name="add_ingredients">Add Ingredients</string>
-    <string name="add_directions">Add Directions</string>
+    <string name="upload_recipe1">Upload Recipe</string>
+    <string name="add_ingredients1">Add Ingredients</string>
+    <string name="add_directions1">Add Directions</string>
     <string name="recipephoto">RecipePhoto</string>
     <string name="upload_recipe">Upload Recipe</string>
     <string name="add_directions">Add Directions</string>
     <string name="add_ingredients">Add Ingredients</string>
-    <string name="recipe_name">Recipe Name</string>
-    <string name="description">Description</string>
+    <string name="recipe_name1">Recipe Name</string>
+    <string name="description1">Description</string>
     <string name="recipeimage">RecipeImage</string>
+    <string name="add2">Add</string>
+    <string name="save2">Save</string>
     <string name="add">Add</string>
     <string name="save">Save</string>
-    <string name="add">Add</string>
-    <string name="save">Save</string>
+    <string name="description">Description</string>
+    <string name="recipe_name">Recipe Name</string>
 
 </resources>

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.mpersson.myrecipeorganizer.model.Recipe;
 
@@ -21,6 +22,8 @@ public class RecipeDetail extends AppCompatActivity {
     private StringListAdapter mIngAdapter;
     private StringListAdapter mDirectionAdapter;
     private Recipe mRecipe;
+    private TextView txtDescriptions;
+    private TextView txtTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,11 @@ public class RecipeDetail extends AppCompatActivity {
 
         Intent intent = getIntent();
         mRecipe = intent.getParcelableExtra("RECIPE");
+
+        txtDescriptions = findViewById(R.id.txtDescription);
+        txtTitle = findViewById(R.id.txtTitle);
+        txtDescriptions.setText(mRecipe.getDescription());
+        txtTitle.setText(mRecipe.getName());
 
         mIngRecyclerView = findViewById(R.id.recyclerviewIngredients);
         String[] ingredients = mRecipe.getIngredients();
